@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Results | Forces Academy Faisalabad</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#152238;
+    --navy-2:#1E3352;
+    --gold:#C79A3C;
+    --cream:#F6F3EA;
+    --olive:#4C5A3C;
+    --ink:#1B1B1B;
+    --line:#D9D2BE;
+    --paper:#FFFFFF;
+  }
+  *{box-sizing:border-box;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Source Sans 3', sans-serif;
+    font-size:16px;
+  }
+  h1,h2,h3,h4,.brand,.eyebrow,.stat-label,th{
+    font-family:'Oswald', sans-serif;
+    letter-spacing:.03em;
+  }
+  a{color:var(--navy-2);}
+  .masthead{
+    background:var(--navy);
+    color:var(--cream);
+    border-bottom:3px solid var(--gold);
+  }
+  .masthead .navbar-brand{
+    font-family:'Oswald',sans-serif;
+    font-weight:700;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--cream) !important;
+    font-size:1.15rem;
+  }
+  .masthead .navbar-brand small{
+    display:block;
+    font-family:'Source Sans 3',sans-serif;
+    font-weight:400;
+    letter-spacing:.02em;
+    text-transform:none;
+    font-size:.7rem;
+    color:var(--gold);
+  }
+  .masthead .nav-link{
+    color:rgba(246,243,234,.8) !important;
+    font-family:'Oswald',sans-serif;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    font-size:.85rem;
+    padding:.6rem 1rem !important;
+  }
+  .masthead .nav-link.active,
+  .masthead .nav-link:hover{
+    color:var(--gold) !important;
+  }
+  .page-header{
+    background:var(--navy);
+    color:var(--cream);
+    padding:3rem 0 2.5rem;
+    position:relative;
+    border-bottom:1px solid rgba(199,154,60,.4);
+  }
+  .page-header::after{
+    content:"";
+    position:absolute;
+    left:0; right:0; bottom:-6px;
+    height:6px;
+    background:repeating-linear-gradient(90deg, var(--gold) 0 10px, transparent 10px 20px);
+    opacity:.6;
+  }
+  .eyebrow{
+    color:var(--gold);
+    text-transform:uppercase;
+    font-size:.8rem;
+    letter-spacing:.18em;
+    margin-bottom:.5rem;
+  }
+  .page-header h1{
+    font-weight:700;
+    text-transform:uppercase;
+    font-size:2.4rem;
+    margin-bottom:.5rem;
+  }
+  .page-header p{
+    color:rgba(246,243,234,.85);
+    max-width:640px;
+    margin-bottom:0;
+  }
+  .filter-panel{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left:4px solid var(--gold);
+    padding:1.25rem 1.5rem;
+    margin-top:-2.5rem;
+    position:relative;
+    z-index:2;
+    box-shadow:0 6px 18px rgba(21,34,56,.08);
+  }
+  .filter-panel label{
+    font-family:'Oswald',sans-serif;
+    font-size:.72rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--navy);
+    margin-bottom:.3rem;
+    display:block;
+  }
+  .filter-panel .form-select{
+    border-radius:0;
+    border:1px solid var(--line);
+  }
+  .filter-panel .form-select:focus{
+    border-color:var(--gold);
+    box-shadow:0 0 0 .15rem rgba(199,154,60,.25);
+  }
+  .btn-gold{
+    background:var(--gold);
+    border:1px solid var(--gold);
+    color:var(--navy);
+    font-family:'Oswald',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    font-size:.85rem;
+    border-radius:0;
+    padding:.5rem 1.4rem;
+  }
+  .btn-gold:hover{
+    background:#B98A2E;
+    color:var(--navy);
+  }
+  .section-label{
+    display:flex;
+    align-items:center;
+    gap:.75rem;
+    margin:2.5rem 0 1rem;
+  }
+  .section-label .num{
+    font-family:'Oswald',sans-serif;
+    color:var(--gold);
+    font-weight:700;
+    font-size:.85rem;
+    border:1px solid var(--gold);
+    padding:.15rem .5rem;
+  }
+  .section-label h2{
+    font-size:1.15rem;
+    text-transform:uppercase;
+    margin:0;
+    color:var(--navy);
+  }
+  .section-label::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:var(--line);
+  }
+  .table-wrap{
+    background:var(--paper);
+    border:1px solid var(--line);
+    overflow-x:auto;
+  }
+  table.results{
+    margin-bottom:0;
+    min-width:720px;
+  }
+  table.results thead th{
+    background:var(--navy);
+    color:var(--cream);
+    text-transform:uppercase;
+    font-size:.78rem;
+    letter-spacing:.08em;
+    font-weight:500;
+    padding:.85rem 1rem;
+    border:none;
+    white-space:nowrap;
+  }
+  table.results tbody td{
+    padding:.75rem 1rem;
+    vertical-align:middle;
+    border-color:var(--line);
+    font-size:.93rem;
+  }
+  table.results tbody tr:nth-child(even){
+    background:#FBF9F3;
+  }
+  .grade-pill{
+    display:inline-block;
+    min-width:2.1rem;
+    text-align:center;
+    padding:.15rem .4rem;
+    font-family:'Oswald',sans-serif;
+    font-weight:600;
+    font-size:.8rem;
+    border:1px solid var(--navy);
+    color:var(--navy);
+  }
+  .grade-pill.a{background:rgba(76,90,60,.12); border-color:var(--olive); color:var(--olive);}
+  .grade-pill.b{background:rgba(199,154,60,.12); border-color:var(--gold); color:#8A6A1F;}
+  .grade-pill.c{background:rgba(21,34,56,.06);}
+  .admin-note{
+    background:#FBF6E9;
+    border:1px dashed var(--gold);
+    padding:1rem 1.25rem;
+    font-size:.9rem;
+    color:var(--navy);
+    margin-top:1.5rem;
+  }
+  .admin-note strong{color:#8A6A1F;}
+  footer{
+    background:var(--navy);
+    color:rgba(246,243,234,.7);
+    padding:2rem 0;
+    margin-top:4rem;
+    font-size:.85rem;
+    text-align:center;
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg masthead py-2">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Forces Academy<small>Faisalabad</small></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" style="border-color:rgba(255,255,255,.3);">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link active" href="result.html">Results</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="container">
+    <div class="eyebrow">Examination Record</div>
+    <h1>Student Results</h1>
+    <p>Check term and annual examination results by class and year. Results shown below reflect the latest examination cycle uploaded by the academy administration.</p>
+  </div>
+</header>
+
+<main class="container">
+
+  <div class="filter-panel">
+    <div class="row g-3 align-items-end">
+      <div class="col-6 col-md-3">
+        <label for="filterClass">Class</label>
+        <select class="form-select" id="filterClass">
+          <option selected>All Classes</option>
+          <option>Class 6</option>
+          <option>Class 7</option>
+          <option>Class 8</option>
+          <option>Class 9</option>
+          <option>Class 10</option>
+        </select>
+      </div>
+      <div class="col-6 col-md-3">
+        <label for="filterYear">Year</label>
+        <select class="form-select" id="filterYear">
+          <option selected>All Years</option>
+          <option>2026</option>
+          <option>2025</option>
+          <option>2024</option>
+        </select>
+      </div>
+      <div class="col-12 col-md-3">
+        <label for="filterTerm">Examination</label>
+        <select class="form-select" id="filterTerm">
+          <option selected>Annual Exam</option>
+          <option>Mid-Term</option>
+          <option>Monthly Test</option>
+        </select>
+      </div>
+      <div class="col-12 col-md-3 d-grid">
+        <button class="btn btn-gold" type="button">Apply Filters</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">
+    <span class="num">01</span>
+    <h2>Examination Results</h2>
+  </div>
+
+  <div class="table-wrap">
+    <table class="table results">
+      <thead>
+        <tr>
+          <th>Roll No.</th>
+          <th>Student Name</th>
+          <th>Class</th>
+          <th>Subject</th>
+          <th>Marks</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>FA-1021</td><td>Ahmed Raza</td><td>Class 9</td><td>Mathematics</td><td>92 / 100</td><td><span class="grade-pill a">A+</span></td></tr>
+        <tr><td>FA-1022</td><td>Hina Bibi</td><td>Class 9</td><td>Physics</td><td>78 / 100</td><td><span class="grade-pill a">A</span></td></tr>
+        <tr><td>FA-1023</td><td>Muhammad Usman</td><td>Class 8</td><td>Chemistry</td><td>65 / 100</td><td><span class="grade-pill b">B</span></td></tr>
+        <tr><td>FA-1024</td><td>Ayesha Siddiqui</td><td>Class 10</td><td>Biology</td><td>88 / 100</td><td><span class="grade-pill a">A</span></td></tr>
+        <tr><td>FA-1025</td><td>Bilal Hussain</td><td>Class 7</td><td>English</td><td>71 / 100</td><td><span class="grade-pill b">B</span></td></tr>
+        <tr><td>FA-1026</td><td>Sana Fatima</td><td>Class 9</td><td>Urdu</td><td>95 / 100</td><td><span class="grade-pill a">A+</span></td></tr>
+        <tr><td>FA-1027</td><td>Hamza Tariq</td><td>Class 6</td><td>Islamiat</td><td>84 / 100</td><td><span class="grade-pill a">A</span></td></tr>
+        <tr><td>FA-1028</td><td>Zainab Malik</td><td>Class 8</td><td>Computer Science</td><td>58 / 100</td><td><span class="grade-pill c">C</span></td></tr>
+        <tr><td>FA-1029</td><td>Ali Hassan</td><td>Class 10</td><td>Mathematics</td><td>90 / 100</td><td><span class="grade-pill a">A+</span></td></tr>
+        <tr><td>FA-1030</td><td>Mahnoor Khan</td><td>Class 7</td><td>Science</td><td>76 / 100</td><td><span class="grade-pill b">B</span></td></tr>
+        <tr><td>FA-1031</td><td>Fahad Iqbal</td><td>Class 6</td><td>Mathematics</td><td>62 / 100</td><td><span class="grade-pill b">B</span></td></tr>
+        <tr><td>FA-1032</td><td>Rida Akram</td><td>Class 9</td><td>Physics</td><td>81 / 100</td><td><span class="grade-pill a">A</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="admin-note">
+    <strong>Note:</strong> Results are updated by administration. Contact admin for queries regarding marks, corrections, or missing entries.
+  </div>
+
+</main>
+
+<footer>
+  <div class="container">
+    &copy; 2026 Forces Academy Faisalabad. All rights reserved.
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
