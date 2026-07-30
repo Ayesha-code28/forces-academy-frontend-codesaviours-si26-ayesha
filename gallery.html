@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | Forces Academy Faisalabad</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<style>
+  .cat-filters{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.6rem;
+    margin:2.5rem 0 2rem;
+  }
+  .cat-btn{
+    font-family:'Oswald',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    font-size:.8rem;
+    background:transparent;
+    border:1px solid var(--navy);
+    color:var(--navy);
+    padding:.5rem 1.2rem;
+    cursor:pointer;
+    transition:all .15s ease;
+  }
+  .cat-btn:hover{
+    background:rgba(21,34,56,.06);
+  }
+  .cat-btn.active{
+    background:var(--navy);
+    color:var(--cream);
+    border-color:var(--navy);
+  }
+  .cat-btn.active::before{
+    content:"\2726\00a0";
+    color:var(--gold);
+  }
+  .photo-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:1rem;
+    margin-bottom:3rem;
+  }
+  @media (max-width:991px){
+    .photo-grid{ grid-template-columns:repeat(2,1fr); }
+  }
+  @media (max-width:575px){
+    .photo-grid{ grid-template-columns:1fr; }
+  }
+  .photo-card{
+    position:relative;
+    overflow:hidden;
+    border:1px solid var(--line);
+    background:var(--paper);
+    display:block;
+  }
+  .photo-card img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+    display:block;
+    filter:saturate(.95);
+    transition:transform .3s ease;
+  }
+  .photo-card:hover img{
+    transform:scale(1.06);
+  }
+  .photo-tag{
+    position:absolute;
+    top:.6rem; left:.6rem;
+    background:var(--navy);
+    color:var(--gold);
+    font-family:'Oswald',sans-serif;
+    font-size:.68rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    padding:.2rem .55rem;
+    border:1px solid var(--gold);
+  }
+  .photo-card.hidden{ display:none; }
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg masthead py-2">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Forces Academy<small>Faisalabad</small></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation" style="border-color:rgba(255,255,255,.3);">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="admission.html">Admission</a></li>
+        <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+        <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="result.html">Results</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-lg-2"><a class="btn btn-portal btn-sm" href="result.html"><i class="fa-solid fa-user-graduate"></i> Student Portal</a></li>
+        <li class="nav-item ms-lg-2"><a class="btn btn-warning btn-sm" href="admission.html">Apply Now</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="container">
+    <div class="eyebrow">Campus Life</div>
+    <h1>Photo Gallery</h1>
+    <p>Moments from academics, sports, and events across the academy calendar. Click any photograph to view it full size.</p>
+  </div>
+</header>
+
+<main class="container">
+
+  <div class="cat-filters">
+    <button class="cat-btn active" data-filter="all">All</button>
+    <button class="cat-btn" data-filter="events">Events</button>
+    <button class="cat-btn" data-filter="sports">Sports</button>
+    <button class="cat-btn" data-filter="academic">Academic</button>
+  </div>
+
+  <div class="photo-grid" id="photoGrid">
+
+    <a href="https://images.unsplash.com/photo-1758270705031-ebd46917a454?auto=format&fit=crop&w=1200&q=80" class="photo-card glightbox" data-category="academic" data-gallery="academy-gallery">
+      <span class="photo-tag">Academic</span>
+      <img src="https://images.unsplash.com/photo-1758270705031-ebd46917a454?auto=format&fit=crop&w=500&q=80" alt="Students in classroom during lesson" loading="lazy">
+    </a>
+
+    <a href="https://images.unsplash.com/photo-1778876088549-76d29de0834c?auto=format&fit=crop&w=1200&q=80" class="photo-card glightbox" data-category="events" data-gallery="academy-gallery">
+      <span class="photo-tag">Events</span>
+      <img src="https://images.unsplash.com/photo-1778876088549-76d29de0834c?auto=format&fit=crop&w=500&q=80" alt="Annual day celebration on campus" loading="lazy">
+    </a>
+
+    <a href="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=1200&q=80" class="photo-card glightbox" data-category="sports" data-gallery="academy-gallery">
+      <span class="photo-tag">Sports</span>
+      <img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=500&q=80" alt="Students playing football on sports day" loading="lazy">
+    </a>
+
+    <a href="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1200&q=80" class="photo-card glightbox" data-category="academic" data-gallery="academy-gallery">
+      <span class="photo-tag">Academic</span>
+      <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=500&q=80" alt="Science laboratory session" loading="lazy">
+    </a>
+
+    <a href="https://images.unsplash.com/photo-1527871369852-eb58cb2b54e2?auto=format&fit=crop&w=1200&q=80" class="photo-card glightbox" data-category="events" data-gallery="academy-gallery">
+      <span class="photo-tag">Events</span>
+      <img src="https://images.unsplash.com/photo-1527871369852-eb58cb2b54e2?auto=format&fit=crop&w=500&q=80" alt="Prize distribution ceremony" loading="lazy">
+    </a>
+
+    <a href="https://images.unsplash.com/photo-1763639700456-e243b444c974?auto=format&fit=crop&w=1200&q=80" class="photo-card glightbox" data-category="sports" data-gallery="academy-gallery">
+      <span class="photo-tag">Sports</span>
+      <img src="https://images.unsplash.com/photo-1763639700456-e243b444c974?auto=format&fit=crop&w=500&q=80" alt="Athletics track event" loading="lazy">
+    </a>
+
+    <a href="https://images.unsplash.com/photo-1741699428220-65f37f3fbbcb?auto=format&fit=crop&w=1200&q=80" class="photo-card glightbox" data-category="academic" data-gallery="academy-gallery">
+      <span class="photo-tag">Academic</span>
+      <img src="https://images.unsplash.com/photo-1741699428220-65f37f3fbbcb?auto=format&fit=crop&w=500&q=80" alt="Library reading session" loading="lazy">
+    </a>
+
+    <a href="https://images.unsplash.com/photo-1663296160098-d4849845130a?auto=format&fit=crop&w=1200&q=80" class="photo-card glightbox" data-category="events" data-gallery="academy-gallery">
+      <span class="photo-tag">Events</span>
+      <img src="https://images.unsplash.com/photo-1663296160098-d4849845130a?auto=format&fit=crop&w=500&q=80" alt="Independence Day flag hoisting ceremony" loading="lazy">
+    </a>
+
+  </div>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom" style="border-top:none; margin-top:0; padding-top:0;">
+      &copy; 2026 Forces Academy Faisalabad. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+  const lightbox = GLightbox({
+    selector: '.glightbox',
+    touchNavigation: true,
+    loop: true
+  });
+
+  const filterButtons = document.querySelectorAll('.cat-btn');
+  const photoCards = document.querySelectorAll('.photo-card');
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+
+      photoCards.forEach(card => {
+        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>
