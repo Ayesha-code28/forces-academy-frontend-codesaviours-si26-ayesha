@@ -1,0 +1,232 @@
+/* ============================================================
+   Forces Academy — Dark Mode + Page Animations
+   This file is additive only. It never edits css/style.css and
+   never changes any light-mode color — it only defines what
+   happens under the body.dark-mode selector, plus the toggle
+   button styling and scroll-reveal animation utility classes.
+   ============================================================ */
+
+/* ---------- Dark mode palette (scoped to body.dark-mode) ---------- */
+body.dark-mode{
+  --dm-bg:        #0d1420;
+  --dm-bg-alt:    #0a0f18;
+  --dm-surface:   #161f2e;
+  --dm-surface-2: #1c2739;
+  --dm-border:    #2b3a4d;
+  --dm-text:      #E9E6DA;
+  --dm-text-soft: #B7BECB;
+  --dm-gold:      #E0B45C;
+  --dm-navy:      #101827;
+}
+
+/* ---------- Base page ---------- */
+body.dark-mode{
+  background:var(--dm-bg) !important;
+  color:var(--dm-text) !important;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6{
+  color:var(--dm-text) !important;
+}
+
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode label,
+body.dark-mode .lead{
+  color:var(--dm-text-soft) !important;
+}
+
+body.dark-mode a{ color:var(--dm-gold); }
+
+/* ---------- Navbar ---------- */
+body.dark-mode .masthead{
+  background:var(--dm-bg-alt) !important;
+  border-bottom:1px solid var(--dm-border);
+}
+body.dark-mode .navbar-brand,
+body.dark-mode .nav-link{
+  color:var(--dm-text) !important;
+}
+body.dark-mode .nav-link.active,
+body.dark-mode .nav-link:hover{
+  color:var(--dm-gold) !important;
+}
+
+/* ---------- Hero / page headers / CTA bands ---------- */
+body.dark-mode #hero,
+body.dark-mode .page-header,
+body.dark-mode .cta-band{
+  background:var(--dm-navy) !important;
+}
+body.dark-mode .eyebrow{ color:var(--dm-gold) !important; }
+
+/* ---------- Section labels ---------- */
+body.dark-mode .section-label .num{
+  color:var(--dm-gold) !important;
+}
+body.dark-mode .section-label{
+  border-color:var(--dm-border) !important;
+}
+
+/* ---------- Panels / cards / info blocks ---------- */
+body.dark-mode .panel,
+body.dark-mode .info-card,
+body.dark-mode .form-panel,
+body.dark-mode .filter-panel,
+body.dark-mode .table-wrap,
+body.dark-mode .table-responsive,
+body.dark-mode .map-wrap,
+body.dark-mode .photo-card,
+body.dark-mode .testimonial-card{
+  background:var(--dm-surface) !important;
+  border-color:var(--dm-border) !important;
+  color:var(--dm-text-soft) !important;
+}
+body.dark-mode .icon-box{
+  color:var(--dm-gold) !important;
+}
+body.dark-mode .panel h3,
+body.dark-mode .panel h4,
+body.dark-mode .info-card h4{
+  color:var(--dm-text) !important;
+}
+
+/* ---------- Stats band ---------- */
+body.dark-mode .stats-band{
+  background:var(--dm-navy) !important;
+}
+body.dark-mode .stat-number{
+  color:var(--dm-gold) !important;
+}
+body.dark-mode .stat-label{
+  color:var(--dm-text-soft) !important;
+}
+
+/* ---------- Buttons ---------- */
+body.dark-mode .btn-gold{
+  background:var(--dm-gold) !important;
+  border-color:var(--dm-gold) !important;
+  color:#1a1406 !important;
+}
+body.dark-mode .btn-portal,
+body.dark-mode .btn-outline-cream{
+  color:var(--dm-text) !important;
+  border-color:var(--dm-text) !important;
+}
+
+/* ---------- Forms ---------- */
+body.dark-mode .form-control,
+body.dark-mode .form-select{
+  background:var(--dm-surface-2) !important;
+  border-color:var(--dm-border) !important;
+  color:var(--dm-text) !important;
+}
+body.dark-mode .form-control::placeholder{
+  color:var(--dm-text-soft);
+}
+body.dark-mode .form-control:focus,
+body.dark-mode .form-select:focus{
+  border-color:var(--dm-gold) !important;
+  box-shadow:0 0 0 .15rem rgba(224,180,92,.25) !important;
+}
+body.dark-mode #formSuccess{
+  background:rgba(224,180,92,.12) !important;
+  color:var(--dm-gold) !important;
+  border-color:var(--dm-gold) !important;
+}
+
+/* ---------- Tables ---------- */
+body.dark-mode table thead th{
+  background:var(--dm-navy) !important;
+  color:var(--dm-gold) !important;
+}
+body.dark-mode table tbody td{
+  border-color:var(--dm-border) !important;
+  color:var(--dm-text-soft) !important;
+}
+body.dark-mode table.results tbody tr:nth-child(even){
+  background:var(--dm-surface-2) !important;
+}
+body.dark-mode .grade-pill{
+  border-color:var(--dm-text-soft) !important;
+  color:var(--dm-text) !important;
+}
+body.dark-mode .admin-note{
+  background:var(--dm-surface-2) !important;
+  border-color:var(--dm-gold) !important;
+  color:var(--dm-text-soft) !important;
+}
+body.dark-mode .admin-note strong{ color:var(--dm-gold) !important; }
+
+/* ---------- Gallery filter buttons ---------- */
+body.dark-mode .cat-btn{
+  border-color:var(--dm-border) !important;
+  color:var(--dm-text-soft) !important;
+}
+body.dark-mode .cat-btn.active{
+  background:var(--dm-gold) !important;
+  color:#1a1406 !important;
+  border-color:var(--dm-gold) !important;
+}
+
+/* ---------- Social links ---------- */
+body.dark-mode .social-link{
+  border-color:var(--dm-border) !important;
+  color:var(--dm-text) !important;
+}
+body.dark-mode .social-link:hover{
+  background:var(--dm-gold) !important;
+  color:#1a1406 !important;
+}
+
+/* ---------- Footer ---------- */
+body.dark-mode footer{
+  background:var(--dm-bg-alt) !important;
+  color:var(--dm-text-soft) !important;
+  border-top:1px solid var(--dm-border);
+}
+body.dark-mode footer a{ color:var(--dm-text-soft) !important; }
+body.dark-mode footer a:hover{ color:var(--dm-gold) !important; }
+body.dark-mode .footer-bottom{
+  border-color:var(--dm-border) !important;
+  color:var(--dm-text-soft) !important;
+}
+
+/* ---------- Back-to-top ---------- */
+body.dark-mode #backToTop{
+  background:var(--dm-gold) !important;
+  color:#1a1406 !important;
+}
+
+/* ============================================================
+   Theme Toggle Button
+   ============================================================ */
+.theme-toggle{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.35);
+  background:transparent;
+  color:inherit;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  font-size:.95rem;
+  transition:background .15s ease, transform .15s ease;
+}
+.theme-toggle:hover{
+  background:rgba(255,255,255,.12);
+  transform:rotate(15deg);
+}
+body.dark-mode .theme-toggle{
+  border-color:var(--dm-gold);
+  color:var(--dm-gold);
+}
+
+/* Page-load and scroll animations now live in css/animations.css */

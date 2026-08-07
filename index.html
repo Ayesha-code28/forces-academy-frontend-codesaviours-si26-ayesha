@@ -4,11 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Home | Forces Academy Faisalabad</title>
+<meta name="description" content="Forces Academy Faisalabad — quality education with hands-on tracks in Web Development, Machine Learning, and UI/UX Design. Admissions are open for 2026.">
+<meta name="keywords" content="Forces Academy, Faisalabad academy, Web Development course, Machine Learning course, UI UX Design course, Punjab education">
+<link rel="canonical" href="index.html">
+<meta property="og:title" content="Forces Academy Faisalabad">
+<meta property="og:description" content="Quality education with hands-on tracks in Web Development, Machine Learning, and UI/UX Design.">
+<meta property="og:type" content="website">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="alternate icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link href="css/animations.css" rel="stylesheet">
+<link href="css/dark-mode.css" rel="stylesheet">
 </head>
 <body>
 
@@ -27,6 +38,11 @@
         <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
         <li class="nav-item"><a class="nav-link" href="result.html">Results</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-lg-2">
+          <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+        </li>
         <li class="nav-item ms-lg-2"><a class="btn btn-portal btn-sm" href="result.html"><i class="fa-solid fa-user-graduate"></i> Student Portal</a></li>
         <li class="nav-item ms-lg-2"><a class="btn btn-warning btn-sm" href="admission.html">Apply Now</a></li>
       </ul>
@@ -38,9 +54,9 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8">
-        <div class="eyebrow">Faisalabad, Punjab</div>
-        <h1>Forces Academy Faisalabad</h1>
-        <p class="lead mb-4">Empowering students through quality education, discipline, and excellence — with hands-on tracks in Web Development, Machine Learning, and UI/UX Design.</p>
+        <div class="eyebrow hero-fade-in">Faisalabad, Punjab</div>
+        <h1 class="hero-fade-in hero-delay-1">Forces Academy Faisalabad</h1>
+        <p class="lead mb-4 hero-fade-in hero-delay-2">Empowering students through quality education, discipline, and excellence — with hands-on tracks in Web Development, Machine Learning, and UI/UX Design.</p>
         <div class="d-flex flex-wrap gap-3">
           <a href="admission.html" class="btn btn-gold">Apply Now</a>
           <a href="about.html" class="btn btn-outline-cream">Learn More</a>
@@ -104,21 +120,21 @@
     </div>
     <div class="row g-4">
       <div class="col-md-4">
-        <div class="panel">
+        <div class="panel course-card course-delay-1">
           <div class="icon-box"><i class="fa-solid fa-laptop-code"></i></div>
           <h4>Web Development</h4>
           <p>HTML, CSS, JavaScript and React — build and deploy real, responsive websites.</p>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="panel">
+        <div class="panel course-card course-delay-2">
           <div class="icon-box"><i class="fa-solid fa-brain"></i></div>
           <h4>Machine Learning</h4>
           <p>Python, statistics, and model building through hands-on, real-world projects.</p>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="panel">
+        <div class="panel course-card course-delay-3">
           <div class="icon-box"><i class="fa-solid fa-pen-ruler"></i></div>
           <h4>UI / UX Design</h4>
           <p>Research, wireframing, and prototyping in Figma to design usable products.</p>
@@ -143,7 +159,7 @@
       <div class="carousel-inner pb-5">
         <div class="carousel-item active">
           <div class="testimonial-card">
-            <img src="https://i.pravatar.cc/150?img=12" class="testimonial-photo" alt="Ahmed Raza">
+            <img src="https://i.pravatar.cc/150?img=12" class="testimonial-photo" alt="Portrait of Ahmed Raza, Class 9 student">
             <p class="testimonial-quote">The teachers here don't just prepare you for exams, they prepare you to actually understand the subject.</p>
             <p class="testimonial-name">Ahmed Raza</p>
             <p class="testimonial-meta">Class 9, 2026</p>
@@ -151,7 +167,7 @@
         </div>
         <div class="carousel-item">
           <div class="testimonial-card">
-            <img src="https://i.pravatar.cc/150?img=32" class="testimonial-photo" alt="Sana Fatima">
+            <img src="https://i.pravatar.cc/150?img=32" class="testimonial-photo" alt="Portrait of Sana Fatima, Class 9 student">
             <p class="testimonial-quote">Small class sizes and constant feedback made a huge difference in my grades this year.</p>
             <p class="testimonial-name">Sana Fatima</p>
             <p class="testimonial-meta">Class 9, 2026</p>
@@ -159,7 +175,7 @@
         </div>
         <div class="carousel-item">
           <div class="testimonial-card">
-            <img src="https://i.pravatar.cc/150?img=45" class="testimonial-photo" alt="Ali Hassan">
+            <img src="https://i.pravatar.cc/150?img=45" class="testimonial-photo" alt="Portrait of Ali Hassan, Class 10 student">
             <p class="testimonial-quote">The entry-test prep track is excellent — structured, consistent, and genuinely challenging.</p>
             <p class="testimonial-name">Ali Hassan</p>
             <p class="testimonial-meta">Class 10, 2026</p>
@@ -167,7 +183,7 @@
         </div>
         <div class="carousel-item">
           <div class="testimonial-card">
-            <img src="https://i.pravatar.cc/150?img=48" class="testimonial-photo" alt="Ayesha Siddiqui">
+            <img src="https://i.pravatar.cc/150?img=48" class="testimonial-photo" alt="Portrait of Ayesha Siddiqui, Class 10 student">
             <p class="testimonial-quote">From the labs to the library, everything about this campus is built for students who want to work.</p>
             <p class="testimonial-name">Ayesha Siddiqui</p>
             <p class="testimonial-meta">Class 10, 2026</p>
@@ -234,5 +250,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/theme-toggle.js"></script>
 </body>
 </html>

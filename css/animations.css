@@ -1,0 +1,94 @@
+/* ============================================================
+   Forces Academy — Page Load & Scroll Animations
+   Subtle, professional motion. All animations respect
+   prefers-reduced-motion (see bottom of file).
+   ============================================================ */
+
+/* ---------- Generic scroll-reveal (used on About/Admission/
+   Courses/Contact/Gallery/Results cards & panels) ---------- */
+@keyframes revealUp{
+  from{ opacity:0; transform:translateY(24px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+.reveal{
+  opacity:0;
+  transform:translateY(24px);
+}
+.reveal.is-visible{
+  animation:revealUp .6s ease forwards;
+}
+
+/* ============================================================
+   Home page — Hero heading fade-in on load
+   ============================================================ */
+@keyframes heroFadeIn{
+  from{ opacity:0; transform:translateY(16px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+.hero-fade-in{
+  opacity:0;
+  animation:heroFadeIn .9s ease-out forwards;
+}
+.hero-fade-in.hero-delay-1{ animation-delay:.15s; }
+.hero-fade-in.hero-delay-2{ animation-delay:.3s; }
+
+/* ============================================================
+   Home page — Stat cards slide up when scrolled into view
+   ============================================================ */
+@keyframes statSlideUp{
+  from{ opacity:0; transform:translateY(30px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+.stat-item{
+  opacity:0;
+  transform:translateY(30px);
+}
+.stat-item.is-visible{
+  animation:statSlideUp .55s ease forwards;
+}
+
+/* ============================================================
+   Home page — Course cards appear one by one with a
+   slight stagger between each
+   ============================================================ */
+@keyframes courseAppear{
+  from{ opacity:0; transform:translateY(20px) scale(.98); }
+  to{ opacity:1; transform:translateY(0) scale(1); }
+}
+.course-card{
+  opacity:0;
+  transform:translateY(20px) scale(.98);
+}
+.course-card.is-visible{
+  animation:courseAppear .5s ease forwards;
+}
+.course-card.course-delay-1.is-visible{ animation-delay:0s; }
+.course-card.course-delay-2.is-visible{ animation-delay:.15s; }
+.course-card.course-delay-3.is-visible{ animation-delay:.3s; }
+
+/* ============================================================
+   Theme toggle icon micro-interaction
+   ============================================================ */
+@keyframes toggleSpin{
+  from{ transform:rotate(-20deg) scale(.8); opacity:.6; }
+  to{ transform:rotate(0) scale(1); opacity:1; }
+}
+.theme-toggle i{
+  display:inline-block;
+  animation:toggleSpin .3s ease;
+}
+
+/* ---------- Respect reduced-motion preference ---------- */
+@media (prefers-reduced-motion: reduce){
+  .reveal,
+  .hero-fade-in,
+  .stat-item,
+  .course-card{
+    opacity:1 !important;
+    transform:none !important;
+    animation:none !important;
+  }
+  .theme-toggle i{
+    animation:none !important;
+  }
+}

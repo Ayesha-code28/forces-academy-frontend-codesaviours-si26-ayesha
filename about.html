@@ -4,11 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About | Forces Academy Faisalabad</title>
+<meta name="description" content="Learn about Forces Academy Faisalabad — our mission, vision, leadership team, and why students across Punjab choose us for quality education and results.">
+<meta name="keywords" content="Forces Academy, Faisalabad academy, about Forces Academy, education Punjab">
+<link rel="canonical" href="about.html">
+<meta property="og:title" content="About | Forces Academy Faisalabad">
+<meta property="og:description" content="Our mission, vision, and leadership team at Forces Academy Faisalabad.">
+<meta property="og:type" content="website">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="alternate icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link href="css/animations.css" rel="stylesheet">
+<link href="css/dark-mode.css" rel="stylesheet">
 </head>
 <body>
 
@@ -27,6 +38,11 @@
         <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
         <li class="nav-item"><a class="nav-link" href="result.html">Results</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-lg-2">
+          <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+        </li>
         <li class="nav-item ms-lg-2"><a class="btn btn-portal btn-sm" href="result.html"><i class="fa-solid fa-user-graduate"></i> Student Portal</a></li>
         <li class="nav-item ms-lg-2"><a class="btn btn-warning btn-sm" href="admission.html">Apply Now</a></li>
       </ul>
@@ -56,14 +72,14 @@
   </div>
   <div class="row g-4">
     <div class="col-md-6">
-      <div class="panel">
+      <div class="panel reveal">
         <div class="icon-box"><i class="fa-solid fa-bullseye"></i></div>
         <h3>Mission</h3>
         <p>To empower students with the knowledge, discipline, and confidence they need to succeed in examinations and in life beyond the classroom.</p>
       </div>
     </div>
     <div class="col-md-6">
-      <div class="panel">
+      <div class="panel reveal">
         <div class="icon-box"><i class="fa-solid fa-eye"></i></div>
         <h3>Vision</h3>
         <p>To be recognized across Faisalabad as the academy that sets the standard for academic excellence and character building.</p>
@@ -77,25 +93,25 @@
   </div>
   <div class="row g-4">
     <div class="col-6 col-md-3">
-      <div class="panel text-center">
+      <div class="panel text-center reveal">
         <div class="icon-box mx-auto"><i class="fa-solid fa-chalkboard-user"></i></div>
         <h4>Experienced Faculty</h4>
       </div>
     </div>
     <div class="col-6 col-md-3">
-      <div class="panel text-center">
+      <div class="panel text-center reveal">
         <div class="icon-box mx-auto"><i class="fa-solid fa-flask-vial"></i></div>
         <h4>Modern Labs</h4>
       </div>
     </div>
     <div class="col-6 col-md-3">
-      <div class="panel text-center">
+      <div class="panel text-center reveal">
         <div class="icon-box mx-auto"><i class="fa-solid fa-hand-holding-dollar"></i></div>
         <h4>Scholarships</h4>
       </div>
     </div>
     <div class="col-6 col-md-3">
-      <div class="panel text-center">
+      <div class="panel text-center reveal">
         <div class="icon-box mx-auto"><i class="fa-solid fa-compass"></i></div>
         <h4>Career Guidance</h4>
       </div>
@@ -108,25 +124,25 @@
   </div>
   <div class="row g-4 mb-5">
     <div class="col-6 col-md-3">
-      <div class="panel text-center">
+      <div class="panel text-center reveal">
         <div class="icon-box mx-auto"><i class="fa-solid fa-user-tie"></i></div>
         <h4>Principal</h4>
       </div>
     </div>
     <div class="col-6 col-md-3">
-      <div class="panel text-center">
+      <div class="panel text-center reveal">
         <div class="icon-box mx-auto"><i class="fa-solid fa-user-tie"></i></div>
         <h4>Vice Principal</h4>
       </div>
     </div>
     <div class="col-6 col-md-3">
-      <div class="panel text-center">
+      <div class="panel text-center reveal">
         <div class="icon-box mx-auto"><i class="fa-solid fa-user-tie"></i></div>
         <h4>Academic Coordinator</h4>
       </div>
     </div>
     <div class="col-6 col-md-3">
-      <div class="panel text-center">
+      <div class="panel text-center reveal">
         <div class="icon-box mx-auto"><i class="fa-solid fa-user-tie"></i></div>
         <h4>Admin Manager</h4>
       </div>
@@ -174,5 +190,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/theme-toggle.js"></script>
 </body>
 </html>

@@ -4,12 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gallery | Forces Academy Faisalabad</title>
+<meta name="description" content="Browse photos from academics, sports, and events at Forces Academy Faisalabad. Filter by category and view our full campus life photo gallery online today.">
+<meta name="keywords" content="Forces Academy gallery, Faisalabad academy photos, campus life">
+<link rel="canonical" href="gallery.html">
+<meta property="og:title" content="Gallery | Forces Academy Faisalabad">
+<meta property="og:description" content="Moments from academics, sports, and events across the academy calendar.">
+<meta property="og:type" content="website">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="alternate icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link href="css/animations.css" rel="stylesheet">
+<link href="css/dark-mode.css" rel="stylesheet">
 <style>
   .cat-filters{
     display:flex;
@@ -103,6 +114,11 @@
         <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
         <li class="nav-item"><a class="nav-link" href="result.html">Results</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-lg-2">
+          <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+        </li>
         <li class="nav-item ms-lg-2"><a class="btn btn-portal btn-sm" href="result.html"><i class="fa-solid fa-user-graduate"></i> Student Portal</a></li>
         <li class="nav-item ms-lg-2"><a class="btn btn-warning btn-sm" href="admission.html">Apply Now</a></li>
       </ul>
@@ -129,42 +145,42 @@
 
   <div class="photo-grid" id="photoGrid">
 
-    <a href="https://images.unsplash.com/photo-1758270705031-ebd46917a454?auto=format&fit=crop&w=1200&q=80" class="photo-card glightbox" data-category="academic" data-gallery="academy-gallery">
+    <a href="https://images.unsplash.com/photo-1758270705031-ebd46917a454?auto=format&fit=crop&w=1200&q=80" class="photo-card glightbox reveal" data-category="academic" data-gallery="academy-gallery">
       <span class="photo-tag">Academic</span>
       <img src="https://images.unsplash.com/photo-1758270705031-ebd46917a454?auto=format&fit=crop&w=500&q=80" alt="Students in classroom during lesson" loading="lazy">
     </a>
 
-    <a href="https://images.unsplash.com/photo-1778876088549-76d29de0834c?auto=format&fit=crop&w=1200&q=80" class="photo-card glightbox" data-category="events" data-gallery="academy-gallery">
+    <a href="https://images.unsplash.com/photo-1778876088549-76d29de0834c?auto=format&fit=crop&w=1200&q=80" class="photo-card glightbox reveal" data-category="events" data-gallery="academy-gallery">
       <span class="photo-tag">Events</span>
       <img src="https://images.unsplash.com/photo-1778876088549-76d29de0834c?auto=format&fit=crop&w=500&q=80" alt="Annual day celebration on campus" loading="lazy">
     </a>
 
-    <a href="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=1200&q=80" class="photo-card glightbox" data-category="sports" data-gallery="academy-gallery">
+    <a href="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=1200&q=80" class="photo-card glightbox reveal" data-category="sports" data-gallery="academy-gallery">
       <span class="photo-tag">Sports</span>
       <img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=500&q=80" alt="Students playing football on sports day" loading="lazy">
     </a>
 
-    <a href="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1200&q=80" class="photo-card glightbox" data-category="academic" data-gallery="academy-gallery">
+    <a href="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1200&q=80" class="photo-card glightbox reveal" data-category="academic" data-gallery="academy-gallery">
       <span class="photo-tag">Academic</span>
       <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=500&q=80" alt="Science laboratory session" loading="lazy">
     </a>
 
-    <a href="https://images.unsplash.com/photo-1527871369852-eb58cb2b54e2?auto=format&fit=crop&w=1200&q=80" class="photo-card glightbox" data-category="events" data-gallery="academy-gallery">
+    <a href="https://images.unsplash.com/photo-1527871369852-eb58cb2b54e2?auto=format&fit=crop&w=1200&q=80" class="photo-card glightbox reveal" data-category="events" data-gallery="academy-gallery">
       <span class="photo-tag">Events</span>
       <img src="https://images.unsplash.com/photo-1527871369852-eb58cb2b54e2?auto=format&fit=crop&w=500&q=80" alt="Prize distribution ceremony" loading="lazy">
     </a>
 
-    <a href="https://images.unsplash.com/photo-1763639700456-e243b444c974?auto=format&fit=crop&w=1200&q=80" class="photo-card glightbox" data-category="sports" data-gallery="academy-gallery">
+    <a href="https://images.unsplash.com/photo-1763639700456-e243b444c974?auto=format&fit=crop&w=1200&q=80" class="photo-card glightbox reveal" data-category="sports" data-gallery="academy-gallery">
       <span class="photo-tag">Sports</span>
       <img src="https://images.unsplash.com/photo-1763639700456-e243b444c974?auto=format&fit=crop&w=500&q=80" alt="Athletics track event" loading="lazy">
     </a>
 
-    <a href="https://images.unsplash.com/photo-1741699428220-65f37f3fbbcb?auto=format&fit=crop&w=1200&q=80" class="photo-card glightbox" data-category="academic" data-gallery="academy-gallery">
+    <a href="https://images.unsplash.com/photo-1741699428220-65f37f3fbbcb?auto=format&fit=crop&w=1200&q=80" class="photo-card glightbox reveal" data-category="academic" data-gallery="academy-gallery">
       <span class="photo-tag">Academic</span>
       <img src="https://images.unsplash.com/photo-1741699428220-65f37f3fbbcb?auto=format&fit=crop&w=500&q=80" alt="Library reading session" loading="lazy">
     </a>
 
-    <a href="https://images.unsplash.com/photo-1663296160098-d4849845130a?auto=format&fit=crop&w=1200&q=80" class="photo-card glightbox" data-category="events" data-gallery="academy-gallery">
+    <a href="https://images.unsplash.com/photo-1663296160098-d4849845130a?auto=format&fit=crop&w=1200&q=80" class="photo-card glightbox reveal" data-category="events" data-gallery="academy-gallery">
       <span class="photo-tag">Events</span>
       <img src="https://images.unsplash.com/photo-1663296160098-d4849845130a?auto=format&fit=crop&w=500&q=80" alt="Independence Day flag hoisting ceremony" loading="lazy">
     </a>
@@ -186,6 +202,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/theme-toggle.js"></script>
 <script>
   const lightbox = GLightbox({
     selector: '.glightbox',

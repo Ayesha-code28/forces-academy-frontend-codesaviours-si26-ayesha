@@ -4,11 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Results | Forces Academy Faisalabad</title>
+<meta name="description" content="Check term and annual examination results by class and year at Forces Academy Faisalabad. Filter results by class, year, and examination type instantly.">
+<meta name="keywords" content="Forces Academy results, Faisalabad academy exam results, student results portal">
+<link rel="canonical" href="result.html">
+<meta property="og:title" content="Student Results | Forces Academy Faisalabad">
+<meta property="og:description" content="Check term and annual examination results by class and year.">
+<meta property="og:type" content="website">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="alternate icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link href="css/animations.css" rel="stylesheet">
+<link href="css/dark-mode.css" rel="stylesheet">
 <style>
   .filter-panel{
     background:var(--paper);
@@ -109,6 +120,11 @@
         <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
         <li class="nav-item"><a class="nav-link active" href="result.html">Results</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-lg-2">
+          <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+        </li>
         <li class="nav-item ms-lg-2"><a class="btn btn-portal btn-sm" href="result.html"><i class="fa-solid fa-user-graduate"></i> Student Portal</a></li>
         <li class="nav-item ms-lg-2"><a class="btn btn-warning btn-sm" href="admission.html">Apply Now</a></li>
       </ul>
@@ -126,7 +142,7 @@
 
 <main class="container">
 
-  <div class="filter-panel">
+  <div class="filter-panel reveal">
     <div class="row g-3 align-items-end">
       <div class="col-6 col-md-3">
         <label for="filterClass">Class</label>
@@ -167,7 +183,7 @@
     <h2>Examination Results</h2>
   </div>
 
-  <div class="table-wrap">
+  <div class="table-wrap reveal">
     <table class="table results">
       <thead>
         <tr>
@@ -214,6 +230,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/theme-toggle.js"></script>
 <script>
   document.getElementById('applyFiltersBtn').addEventListener('click', function () {
     const selectedClass = document.getElementById('filterClass').value;

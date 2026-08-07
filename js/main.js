@@ -1,5 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+  /* ---------- Dark / light mode toggle ---------- */
+  const themeToggle = document.getElementById('themeToggle');
+  if (themeToggle) {
+    const icon = themeToggle.querySelector('i');
+    const applyTheme = (isDark) => {
+      document.body.classList.toggle('dark-mode', isDark);
+      if (icon) {
+        icon.classList.toggle('fa-moon', !isDark);
+        icon.classList.toggle('fa-sun', isDark);
+      }
+    };
+    applyTheme(localStorage.getItem('theme') === 'dark');
+    themeToggle.addEventListener('click', function () {
+      const isDark = !document.body.classList.contains('dark-mode');
+      applyTheme(isDark);
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  }
+
   /* ---------- Back to top button ---------- */
   const backToTop = document.getElementById('backToTop');
   if (backToTop) {
@@ -38,6 +57,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
+          const wrapper = entry.target.closest('.stat-item');
+          if (wrapper) wrapper.classList.add('in-view');
           animateCount(entry.target);
           observer.unobserve(entry.target);
         }

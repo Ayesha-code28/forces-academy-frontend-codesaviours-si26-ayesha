@@ -441,3 +441,94 @@ footer .fa-brands:hover{ color:var(--gold); transform:translateY(-2px); }
 
 /* ---------- Utility ---------- */
 .text-gold{ color:var(--gold) !important; }
+
+/* ==========================================================================
+   Theme toggle button
+   ========================================================================== */
+#themeToggle{
+  border:1px solid var(--gold);
+  background:transparent;
+  color:var(--gold);
+  width:38px; height:38px;
+  border-radius:50%;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:0;
+  transition:background-color .15s ease, color .15s ease, transform .15s ease;
+}
+#themeToggle:hover, #themeToggle:focus-visible{
+  background:var(--gold);
+  color:var(--navy);
+  transform:translateY(-1px);
+}
+
+/* ==========================================================================
+   Dark Mode
+   ========================================================================== */
+body.dark-mode{
+  --cream:#EDE9DC;
+  --paper:#1B2333;
+  --line:#2C3548;
+  --ink:#E7E4D9;
+  --muted:#B7B2A2;
+  background:#0F1622;
+}
+body.dark-mode .masthead,
+body.dark-mode .page-header,
+body.dark-mode #hero,
+body.dark-mode .stats-band,
+body.dark-mode footer{
+  background:#0A0E17;
+}
+body.dark-mode .panel,
+body.dark-mode .form-panel,
+body.dark-mode .info-card,
+body.dark-mode .table-wrap,
+body.dark-mode .filter-panel,
+body.dark-mode .photo-card{
+  background:var(--paper);
+  border-color:var(--line);
+}
+body.dark-mode .panel:hover{
+  box-shadow:0 10px 24px rgba(0,0,0,.35);
+}
+body.dark-mode table.results thead th,
+body.dark-mode table.fee-table thead th{
+  background:#0A0E17;
+}
+body.dark-mode table.results tbody tr:nth-child(even){
+  background:#171F2E;
+}
+body.dark-mode .form-control,
+body.dark-mode .form-select{
+  background:var(--paper);
+  color:var(--ink);
+  border-color:var(--line);
+}
+body.dark-mode .cta-band{
+  background:var(--gold-dark);
+}
+body.dark-mode .cta-band h2{ color:var(--navy); }
+
+/* ==========================================================================
+   Page Load Animations
+   ========================================================================== */
+@keyframes fadeIn{
+  from{ opacity:0; transform:translateY(-15px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+@keyframes slideUp{
+  from{ opacity:0; transform:translateY(30px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+
+#hero .eyebrow{ animation:fadeIn .7s ease forwards; }
+#hero h1{ animation:fadeIn .9s ease forwards; }
+#hero .lead{ animation:fadeIn 1.1s ease forwards; }
+#hero .d-flex.flex-wrap{ animation:fadeIn 1.3s ease forwards; }
+
+.stat-item{ opacity:0; }
+.stat-item.in-view{ animation:slideUp .6s ease forwards; }
+
+.course-card-animate{ opacity:0; animation:slideUp .6s ease forwards; }

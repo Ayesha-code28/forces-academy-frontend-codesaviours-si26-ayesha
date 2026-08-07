@@ -4,11 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact | Forces Academy Faisalabad</title>
+<meta name="description" content="Contact Forces Academy Faisalabad for admissions, results queries, or general information. Find our address, phone number, email, and office hours here.">
+<meta name="keywords" content="Forces Academy contact, Faisalabad academy contact, academy office Faisalabad">
+<link rel="canonical" href="contact.html">
+<meta property="og:title" content="Contact | Forces Academy Faisalabad">
+<meta property="og:description" content="Reach out to the academy office for admissions, results queries, or general information.">
+<meta property="og:type" content="website">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="alternate icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link href="css/animations.css" rel="stylesheet">
+<link href="css/dark-mode.css" rel="stylesheet">
 <style>
   .form-panel{
     background:var(--paper);
@@ -122,6 +133,11 @@
         <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
         <li class="nav-item"><a class="nav-link" href="result.html">Results</a></li>
         <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-lg-2">
+          <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+        </li>
         <li class="nav-item ms-lg-2"><a class="btn btn-portal btn-sm" href="result.html"><i class="fa-solid fa-user-graduate"></i> Student Portal</a></li>
         <li class="nav-item ms-lg-2"><a class="btn btn-warning btn-sm" href="admission.html">Apply Now</a></li>
       </ul>
@@ -192,28 +208,28 @@
 
   <div class="row g-4">
     <div class="col-6 col-md-3">
-      <div class="info-card">
+      <div class="info-card reveal">
         <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
         <h4>Address</h4>
         <p>Canal Road, near Susan Road, Faisalabad, Punjab, Pakistan</p>
       </div>
     </div>
     <div class="col-6 col-md-3">
-      <div class="info-card">
+      <div class="info-card reveal">
         <div class="icon"><i class="fa-solid fa-phone"></i></div>
         <h4>Phone</h4>
         <p>+92 41 111 222 333</p>
       </div>
     </div>
     <div class="col-6 col-md-3">
-      <div class="info-card">
+      <div class="info-card reveal">
         <div class="icon"><i class="fa-solid fa-envelope"></i></div>
         <h4>Email</h4>
         <p>info@forcesacademyfsd.edu.pk</p>
       </div>
     </div>
     <div class="col-6 col-md-3">
-      <div class="info-card">
+      <div class="info-card reveal">
         <div class="icon"><i class="fa-solid fa-clock"></i></div>
         <h4>Office Hours</h4>
         <p>Mon &ndash; Sat, 8:00 AM &ndash; 3:00 PM</p>
@@ -262,6 +278,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/theme-toggle.js"></script>
 <script>
   const form = document.getElementById('contactForm');
   const successBox = document.getElementById('formSuccess');
